@@ -1,0 +1,132 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    padding: 0;
+}
+.video-container{
+    width:100vw;
+    height: 100vh;
+    background-color: black;
+}
+video{
+    width: 100%;
+    height: 100%;
+}
+.action-container{
+    height: 12rem;
+    width: 5rem;
+    position: absolute;
+    top: calc((100% - 12rem) / 2);
+    right: 5rem;
+    color:#fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 2;
+}
+.action-container > *{
+    width:100%;
+    height: 5rem;
+    border-radius: 50%;
+    border:5px solid #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.record-btn-cont{
+    background-color: red;
+    width:3rem;
+    height:3rem;
+    border-radius: 50%;
+}
+.capture-btn-cont{
+    background-color: white;
+    width:3rem;
+    height:3rem;
+    border-radius: 50%;
+}
+.scale-record{
+    animation: scale-record; 
+    animation-iteration-count: infinite;
+    animation-duration: 1s;
+}
+.scale-captures{
+    animation: scale-capture;
+    animation-iteration-count: 10;
+    animation-duration: 1s;
+}
+@keyframes scale-record{
+    0%{
+        transform: scale(0.8);
+    }100%{
+        transform: scale(1.1);
+    }
+}
+
+@keyframes scale-captures{
+    0%{
+        transform: scale(0.8);
+    }100%{
+        transform: scale(1.1);
+    }
+}
+
+.timer-container{
+    height: 16rem;
+    width: 5rem;
+    position: absolute;
+    color: aqua;
+    top:5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.8rem;
+    z-index:2;
+}
+.timer{
+    display: none;
+    margin: 0;
+}
+.filter-cont{
+    width:5rem;
+    height: 16rem;
+    background-color: aqua;
+    position:absolute;
+    top: calc((100vh - 16rem) / 2);
+    left: 5rem;
+    z-index: 2;
+}
+.filter{
+    background-image: url("https://images.pexels.com/photos/240526/pexels-photo-240526.jpeg?cs=srgb&dl=sea-sky-sunny-240526.jpg&fm=jpg");
+    height: 4rem;
+    background-position: center;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-blend-mode: color-burn;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.filter-layer{
+    width:100vw;
+    height: 100vh;
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.orange{
+    background-color: rgba(255, 166, 0, 0.158);
+}
+.brown{
+    background-color: rgba(165, 42, 42, 0.251);
+}
+.pink{
+    background-color: rgba(255, 255, 240, 0.468);
+}
+.transparent{
+    background-color: transparent;
+}
